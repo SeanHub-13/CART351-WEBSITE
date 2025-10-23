@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="title" style="margin-bottom: 2%;">Donut Delivery Contact Form</h3>
+<section>
+    <div style="background-color: white; width:25%; margin: auto; border-radius: 20px;">
+        <!-- Sends you to the thank you page -->
+        <form action="{{url_for('thank_you_t2')}}">
+            <fieldset style="border-width: 0px;">
+                <!-- Ok I know I made more of these than I was supposed to but I was curious about the types and I thought this made sense as a type of form -->
+                <!-- Still I only used the required one for the next part so -->
+                <p class="input-field">
+                    <label>Full Name:</label>
+                    <input type="text" size="20" name="name" placeholder="John Doe" required>
+                </p>
+
+                <p class="input-field">
+                    <label>Email Address:</label>
+                    <input type="email" size="24" name="email" placeholder="JohnDoe@gmail.com" required>
+                </p>
+
+                <p class="input-field">
+                    <label>Donut Choice:</label>
+                    <input list="donuts" size="24" name="choice" placeholder="Regular Plain" required>
+                </p>
+
+                <!-- This datalist holds all the different options of donut -->
+                <datalist id="donuts">
+                    <option value="Regular Plain">regular, none</option>
+                    <option value="Regular Glaze">regular, glazed</option>
+                    <option value="Regular Sugar Spread">regular, sugar</option>
+                    <option value="Regular Powdered Sugar">regular, powdered sugar</option>
+                    <option value="Regular Chocolate Sprinkle">regular, chocolate with sprinkles</option>
+                    <option value="Regular Chocolate">regular, chocolate</option>
+                    <option value="Regular Maple">regular, maple</option>
+
+                    <option value="Chocolate Plain">chocolate, none</option>
+                    <option value="Chocolate Glaze">chocolate, glazed</option>
+                    <option value="Chocolate Sugar Spread">chocolate, sugar</option>
+                    <option value="Chocolate Powdered Sugar">chocolate, powdered sugar</option>
+                    <option value="Chocolate Chocolate Sprinkle">chocolate, chocolate with sprinkles</option>
+                    <option value="Chocolate Chocolate">chocolate, chocolate</option>
+                    <option value="Chocolate Maple">chocolate, maple</option>
+
+                    <option value="Blueberry Plain">blueberry, none</option>
+                    <option value="Blueberry Glaze">blueberry, glazed</option>
+                    <option value="Blueberry Sugar Spread">blueberry, sugar</option>
+                    <option value="Blueberry Powdered Sugar">blueberry, powdered sugar</option>
+                    <option value="Blueberry Chocolate Sprinkle">blueberry, chocolate with sprinkles</option>
+                    <option value="Blueberry Chocolate">blueberry, chocolate</option>
+                    <option value="Blueberry Maple">blueberry, maple</option>
+
+                    <option value="Devils Food Plain">devil's food, none</option>
+                    <option value="Devils Food Glaze">devil's food, glazed</option>
+                    <option value="Devils Food Sugar Spread">devil's food, sugar</option>
+                    <option value="Devils Food Powdered Sugar">devil's food, powdered sugar</option>
+                    <option value="Devils Food Chocolate Sprinkle">devil's food, chocolate with sprinkles</option>
+                    <option value="Devils Food Chocolate">devil's food, chocolate</option>
+                    <option value="Devils Food Maple">devil's food, maple</option>
+                </datalist>
+
+                <p class="input-field">
+                    <label>Amount:</label>
+                    <input type="number" name="amount" value="1">
+                </p>
+
+                <p class="input-field">
+                    <label>Address:</label>
+                    <input type="text" size="24" name="address" placeholder="927 Jane Avenue, Blitmon Hill" required>
+                </p>
+
+                <!-- Made sense to include time on top of date -->
+                <p class="input-field">
+                    <label>Delivery Date / Time:</label>
+                    <input type="datetime-local" name="delivery" required>
+                </p>
+                <p class="input-field">
+                    <label>Notes:</label><br>
+                    <textarea type="text" rows="4" cols="50" name="notes" placeholder="~Special Instructions Here"
+                        required></textarea>
+                </p>
+                <p class="input-field">
+                    <input type="submit" name="submit" value="Submit" id=buttonS />
+
+
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</section>
+{% endblock %}

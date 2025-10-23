@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h3 style="padding-bottom: 30px;">Welcome to the <span style="color:magenta; font-size: 30px;">{{the_topic | upper}}
+        PAGE</span></h3>
+<section>
+    <p style="padding-bottom: 40px;"> Today we have <span
+            style="color:magenta; font-size: 30px;">{{number_of_donuts}}</span> donuts!</p>
+
+    <!-- Double for loop to get a pairing of each flavour and topping -->
+    {% for a in donut_data["flavours"] %}
+    {% for b in donut_data["toppings"] %}
+
+    <!-- Decides what to display to the user based on the donut flavour chosen -->
+    {% if a == "Regular" %}
+    <div style="background-color: magenta;">
+        <img style="width: 40px; height: 40px;" src="static/images/donut_pink.png">
+        <p style="padding-bottom: 10px; color:rgb(239, 173, 92); font-weight: bolder;">A {{a}} donut with {{b}} as
+            its topping!</p>
+    </div>
+    {% endif %}
+    {% if a == "Chocolate" %}
+    <div style="background-color: maroon;">
+        <img style="width: 40px; height: 40px;" src="static/images/donut_a.png">
+        <p style="padding-bottom: 10px; color:brown; font-weight: bolder;">A {{a}} donut with {{b}} as its topping!</p>
+    </div>
+    {% endif %}
+    {% if a == "Blueberry" %}
+    <div style="background-color: lightblue;">
+        <img style="width: 40px; height: 40px;" src="static/images/donut_e.png">
+        <p style="padding-bottom: 10px; color:blue; font-weight: bolder;">A {{a}} donut with {{b}} as its topping!</p>
+    </div>
+    {% endif %}
+    {% if a == "Devil's Food" %}
+    <div style="background-color: orange;">
+        <img style="width: 40px; height: 40px;" src="static/images/donut_c.png">
+        <p style="padding-bottom: 10px; color:darkslateblue; font-weight: bolder;">A {{a}} donut with {{b}} as its
+            topping!
+        </p>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</section>
+{% endblock %}
