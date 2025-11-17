@@ -1,0 +1,134 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: #111;
+    color: #ddd;
+    font-family: monospace;
+
+}
+
+#layout {
+    height: 100%;
+    width: 100%;
+}
+
+p {}
+
+#leftSubLayout {
+    text-align: center;
+}
+
+.menu-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-text {
+    color: crimson;
+    font-size: 1.563em;
+}
+
+.choice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(225, 220, 220);
+    width: 25%;
+    border-radius: 0.938em;
+    margin-top: 0.938em;
+}
+
+.check-input {
+    display: inline;
+}
+
+.w2ui-popup-title {
+    background-color: #1b1b1b;
+}
+
+.button {
+    background-color: #393939;
+    color: #8b8b8b;
+    padding: 1.25em;
+    font-size: 1em;
+    margin: 0.25em 0.125em;
+    cursor: pointer;
+    border-radius: 1.25em;
+}
+
+.button:active {
+    color: #1b1b1b;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.encounter {
+    margin: 2em;
+    padding: 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #222222;
+    width: 20em;
+    border-style: double;
+    border-radius: 0.5em;
+    border-color: #5b5b5b;
+}
+
+.encounter:hover {
+    /* transform: scale(1.1); */
+    animation-name: zoom;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+.encounter:not(:hover) {
+    animation-name: unzoom;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+.standard-layout {
+    margin: 2em;
+    padding: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #222222;
+    border-style: double;
+    border-radius: 0.5em;
+    border-color: #5b5b5b;
+}
+
+#welcome-text {
+    text-align: center;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes unzoom {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}

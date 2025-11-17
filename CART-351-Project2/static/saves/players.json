@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Chimaera212",
+        "password": "fwafegeger",
+        "gender": "male",
+        "species": "human",
+        "strength": "10",
+        "dexterity": "8",
+        "intelligence": "12",
+        "charisma": "13",
+        "constitution": "14",
+        "wisdom": "15"
+    },
+    {
+        "name": "A",
+        "password": "1",
+        "gender": "female",
+        "species": "elf",
+        "strength": "8",
+        "dexterity": "15",
+        "intelligence": "10",
+        "charisma": "14",
+        "constitution": "12",
+        "wisdom": "13"
+    },
+    {
+        "name": "B",
+        "password": "2",
+        "gender": "male",
+        "species": "human",
+        "strength": "8",
+        "dexterity": "10",
+        "intelligence": "12",
+        "charisma": "13",
+        "constitution": "14",
+        "wisdom": "15"
+    },
+    {
+        "name": "C",
+        "password": "3",
+        "gender": "male",
+        "species": "human",
+        "strength": "8",
+        "dexterity": "10",
+        "intelligence": "12",
+        "charisma": "13",
+        "constitution": "14",
+        "wisdom": "15"
+    },
+    {
+        "name": "D",
+        "password": "4",
+        "gender": "male",
+        "species": "human",
+        "strength": "8",
+        "dexterity": "10",
+        "intelligence": "12",
+        "charisma": "13",
+        "constitution": "15",
+        "wisdom": "14"
+    },
+    {
+        "name": "E",
+        "password": "5",
+        "gender": "male",
+        "species": "human",
+        "strength": "13",
+        "dexterity": "10",
+        "intelligence": "15",
+        "charisma": "8",
+        "constitution": "14",
+        "wisdom": "12"
+    },
+    {
+        "name": "Chimaera213",
+        "password": "egesgse",
+        "gender": "genderfluid",
+        "species": "human",
+        "strength": "10",
+        "dexterity": "14",
+        "intelligence": "12",
+        "charisma": "15",
+        "constitution": "13",
+        "wisdom": "8"
+    }
+]
