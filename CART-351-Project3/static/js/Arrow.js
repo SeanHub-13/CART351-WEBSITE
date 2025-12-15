@@ -1,35 +1,39 @@
-class Arrow extends Phaser.Physics.Arcade.Image {
-    constructor(scene, x, y, texture = "arrow") {
+class Button extends Phaser.Physics.Arcade.Sprite {
+    constructor(scene, x, y, texture, callback, options = {}) {
         super(scene, x, y, texture);
+
+        this.scene = scene;
+
+        // Stores the function to call when the button is pressed
+        this.callback = callback;
+
+        this.isPressed = false;
 
         scene.add.existing(this);
         scene.physics.add.existing(this);
 
-        this.setActive(false);
-        this.setVisible(false);
+        // Pretty important for a fake tile
+        this.body.setImmovable(true);
 
-        this.setDepth(5);
         this.body.setAllowGravity(false);
 
-        this.body.onWorldBounds = true;
-
-        this.body.setBounce(0);
-
-        this.body.setSize(this.width * 0.5, this.height);
+        // Makes the hitbox fit the button perfectly
+        this.body.setSize(this.width * 0.7, this.height * 0.7);
     }
 
-    fire(x, y, angleRadians, speed = 800) {
-        this.setPosition(x, y);
-        this.setRotation(angleRadians + Math.PI);
+    // If pressed by a player
+    press(player) {
+        // Stops the button from being pressed many times
+        if (this.isPressed) return;
 
-        this.setActive(true);
-        this.setVisible(true);
+        this.isPressed = true;
 
-        this.scene.physics.velocityFromRotation(angleRadians, speed, this.body.velocity);
-        return this;
-    }
+        // Makes it darker
+        this.setTint(0xaaaaaa);
 
-    impact() {
-        this.destroy();
+        // If a callback function was provided, call it with context
+        if (this.callback) {
+            this.callback(player, this);
+        }
     }
 }
