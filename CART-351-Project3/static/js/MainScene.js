@@ -386,9 +386,12 @@ class MainScene extends Phaser.Scene {
 
     // This controls the seperate body and head turning of the player
     playerRotate() {
+        // Gets the mouse location
         this.pointer = this.input.activePointer;
+        // Basically makes said pointer account for camera and game shenanigans
         this.worldPoint = this.pointer.positionToCamera(this.cameras.main);
 
+        // Calculates the angle from the player to the mouse position
         this.targetAngle = Phaser.Math.Angle.Between(
             this.player.x,
             this.player.y,
@@ -396,22 +399,27 @@ class MainScene extends Phaser.Scene {
             this.worldPoint.y
         );
 
+        // Slowly rotates the heads current angle to the target angle based on turn speed
         this.headAngle = Phaser.Math.Angle.RotateTo(
             this.headAngle,
             this.targetAngle,
             this.headTurnSpeed
         );
 
+        // Makes sure to account for offsets when positioning the head sprite
         this.playerHead.setPosition(
             this.player.x + this.headOffset.x,
             this.player.y + this.headOffset.y
         );
 
+        // Basically aligns it forward towards the mouse
         this.playerHead.setRotation(this.headAngle + Math.PI / -2);
+
 
         this.vel = this.player.body.velocity;
         this.isMoving = this.vel.lengthSq() > 1;
 
+        // If the body and head angles differ too much, the body rotates towards the head angle
         if (this.bodyAngle - this.headAngle >= 0.45 || this.bodyAngle - this.headAngle <= -0.45) {
             this.bodyAngle = Phaser.Math.Angle.RotateTo(
                 this.bodyAngle,
@@ -422,6 +430,7 @@ class MainScene extends Phaser.Scene {
 
         this.player.setRotation(this.bodyAngle + Math.PI / 2);
 
+        // Retrieves the center of the player's physics body
         this.cx = this.player.body.center.x;
         this.cy = this.player.body.center.y;
 
